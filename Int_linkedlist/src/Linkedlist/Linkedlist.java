@@ -1,5 +1,6 @@
 package Linkedlist;
 
+
 public class Linkedlist {
 
     private Node head;
@@ -28,4 +29,23 @@ public class Linkedlist {
         }
         System.out.println( " null ");
     }
-}
+    
+    public void deleteByValue(int value){
+        if (head == null) return;
+
+        if (head.data == value){
+            head = head.next;
+            return;
+        }
+        Node current = head;
+        while (current.next != null){
+            if(current.next.data == value){
+                current.next = current.next.next;
+                return;
+            }
+            current = current.next;
+
+        }
+ 
+        }
+    }

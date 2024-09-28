@@ -13,5 +13,12 @@ public class Main {
 
         System.out.println(" Current Linked List: ");
         list.printList();
+
+        System.out.println();
+        System.out.println( " Deleting 20 from the list... ");
+        System.out.println( " Current Linked List: ");
+        list.deleteByValue(20);
+        list.printList();
+
     }
 }
