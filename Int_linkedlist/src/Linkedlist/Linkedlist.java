@@ -5,6 +5,7 @@ public class Linkedlist {
 
     private Node head;
 
+    //Method use to add new Node at the end of the list
     public void add(int data){
         Node newNode = new Node(data);
 
@@ -20,6 +21,7 @@ public class Linkedlist {
     
     }
 
+    //Method use to print the linked list
     public void printList(){
         Node current = head;
 
@@ -30,9 +32,11 @@ public class Linkedlist {
         System.out.println( " null ");
     }
     
+    //Method use to Delete a Node by Value
     public void deleteByValue(int value){
         if (head == null) return;
 
+        //if the head needs to be removed 
         if (head.data == value){
             head = head.next;
             return;
@@ -47,6 +51,7 @@ public class Linkedlist {
 
             }
         }
+        //,Method use to Move a Node to a new position / swap nodes
         public void moveNodePointer(int currentIndex, int newIndex){
             if (head == null || currentIndex == newIndex) return ;
 
@@ -55,6 +60,7 @@ public class Linkedlist {
             Node movingNode = null;
             Node movingPrev = null;
 
+            //Find the node to Move
             for (int i = 0; current != null && i < currentIndex; i++){
 
                 movingPrev = prev;
@@ -64,14 +70,19 @@ public class Linkedlist {
             }
                 movingNode = current;
 
+                //If the node to move was not found 
                 if (movingNode == null) return ;
 
+
+                //Remove the node from its current position 
                 if (movingPrev != null) {
                     movingPrev.next = movingNode.next;
                 } else {
+                    //Moving the head
                     head = movingNode.next;
                 }
 
+                //Insert the nide at the new Position 
                 current = head;
                 prev = null;
 
@@ -79,7 +90,8 @@ public class Linkedlist {
                     prev = null;
                     current = current.next;          
                 
-                } 
+                }
+                
 
                 if (prev != null){
                     movingNode.next = current;
@@ -88,8 +100,12 @@ public class Linkedlist {
                 } else {
                     movingNode.next = head;
                     head = movingNode;
-
                 }
+            }
         }
-    }
+    
+
+    
+
+    
         
