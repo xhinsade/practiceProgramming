@@ -20,5 +20,10 @@ public class Main {
         list.deleteByValue(20);
         list.printList();
 
+        System.out.println();
+        System.out.println(" Moving / Swapping node from index 1 to index 0");
+        list.moveNodePointer(1, 0) ;
+        list.printList();
+
     }
 }
